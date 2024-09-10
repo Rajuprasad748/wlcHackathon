@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import axios from "axios";
@@ -8,7 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -23,29 +23,37 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4001/user/login",
+        "http://localhost:3001/user/login",
         formData
       );
-      console.log(response)
-      if(response){
-        toast.success('Logged in successfully');
-        navigate('/dashboard')
+
+      if (response) {
+        navigate("/dashboard");
+        const authToken = JSON.stringify(response.data.user);
+
+        localStorage.setItem("authToken", authToken);
+        toast.success("Logged in successfully");
       }
     } catch (error) {
-      toast.error('Invalid email address or password');
+      toast.error("Invalid email address or password");
     }
   };
 
-
   return (
     <div className="flex w-screen h-screen overflow-hidden">
-        <div>
+      <div>
         <Navbar />
-        </div>
+      </div>
       <div className="w-screen h-screen flex justify-center items-center bg-slate-300">
-        <form className="w-1/3 mx-auto" method="post"
-          action="/user" onSubmit={handleSubmit}>
-        <h1 className="text-center text-4xl font-bold my-8">Login your Account</h1>
+        <form
+          className="w-1/3 mx-auto"
+          method="post"
+          action="/user/login"
+          onSubmit={handleSubmit}
+        >
+          <h1 className="text-center text-4xl font-bold my-8">
+            Login your Account
+          </h1>
           <div className="my-5">
             <label
               htmlFor="email"
@@ -54,7 +62,8 @@ const Login = () => {
               Email
             </label>
             <input
-            onChange={handleChange}
+              autoComplete="off"
+              onChange={handleChange}
               type="email"
               id="email"
               name="email"
@@ -72,7 +81,7 @@ const Login = () => {
               Password
             </label>
             <input
-            onChange={handleChange}
+              onChange={handleChange}
               type="password"
               id="password"
               name="password"
@@ -80,12 +89,12 @@ const Login = () => {
               placeholder="Enter your password"
               required
             />
-        </div>
+          </div>
           <button
             type="submit"
             className="btn-primary bg-[#1F2937] px-4 py-2 text-lg font-semibold  rounded-lg text-white w-full text-center my-5 active:scale-95"
           >
-           Login
+            Login
           </button>
         </form>
       </div>

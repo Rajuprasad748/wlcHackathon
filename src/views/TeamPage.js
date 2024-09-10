@@ -1,64 +1,87 @@
 import React from "react";
 import Navbar from "../component/Navbar";
+import Nayan from '../membersImg/Nayan.jpg'
+import Akshat from '../membersImg/Akshat.jpg'
+import Divyanshi from '../membersImg/Divyanshi.jpg'
+import Arushi from '../membersImg/Arushi.jpg'
+import Harsh from '../membersImg/Harsh.jpg'
+import Raju from '../membersImg/Raju.jpg'
 
 const TeamPage = () => {
+  const members = [
+    {
+      name: "Nayan Brijpuria",
+      imgSrc: `${Nayan}`,
+      role: "Team Leader",
+      department: "LNCTS CSE-AIML (B)",
+      enrollment: "0157AL221139",
+    },
+    {
+      name: "Arushi Panwalkar",
+      imgSrc: `${Arushi}`,
+      role: "Designer",
+      department: "LNCTS CSE-AIML (A)",
+      enrollment: "0157AL221050",
+    },
+    {
+      name: "Divyanshi Verma",
+      imgSrc: `${Divyanshi}`,
+      role: "Designer",
+      department: "LNCTS CSE-AIML (B)",
+      enrollment: "0157AL221088",
+    },
+    {
+      name: "Harsh Mishra",
+      imgSrc: `${Harsh}`,
+      role: "Researcher",
+      department: "LNCTS CSE-AIML (B)",
+      enrollment: "0157AL221093",
+    },
+    {
+      name: "Akshat Rathore",
+      imgSrc: `${Akshat}`,
+            role: "Researcher",
+      department: "LNCTS CSE-AIML (A)",
+      enrollment: "0157AL221022",
+    },
+    {
+      name: "Raju Prasad",
+      imgSrc: `${Raju}`,
+      role: "Developer",
+      department: "LNCTS CSE-AIML (B)",
+      enrollment: "0157AL221161",
+    },
+  ];
+
   return (
     <div className="flex w-screen h-screen overflow-hidden">
       <div>
         <Navbar />
       </div>
       <div className="bg-slate-300">
-        <div className="h-[8vh]">
-          <h1 className="text-center text-4xl py-4 text-gray-600 font-semibold">Meet Our Team</h1>
+        <div className="h-[8vh] mb-4">
+          <h1 className="text-center text-4xl py-6 text-gray-600 font-bold">
+            Team Members:
+          </h1>
         </div>
-      <section className="w-full flex px-40 py-16 justify-between flex-wrap gap-4">
-          <div className="card text-slate-300 bg-[#1F2937] shadow-md rounded-lg overflow-hidden w-1/3">
-            <div className="p-4">
-              <h2 className="text-lg font-bold text-gray-800">John Doe</h2>
-              <p >Enrollment: 20230123</p>
-              <p >Role: Student</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              
-              </p>
+        <section className="flex px-10 py-10 justify-between flex-wrap gap-4 w-[82vw] text-white">
+          {members.map((member, index) => (
+            <div
+              key={index}
+              className="card bg-[#1F2937] shadow-md rounded-lg overflow-hidden w-[30%] hover:scale-110 transition-all"
+            >
+              <div className="p-4 flex flex-col items-center justify-center">
+        <div className="w-28 h-28 my-2 overflow-hidden bg-slate-300 rounded-full">
+        <img src={member.imgSrc} alt="" className="w-full h-full object-cover"/>
+        </div>
+                <h2 className="text-xl font-bold">{member.name}</h2>
+                <p className="font-semibold text-lg">{member.role}</p>
+                <p>{member.enrollment}</p>
+                <p>{member.department}</p>
+              </div>
             </div>
-          </div>
-          <div className="card bg-gray-400 text-white shadow-md rounded-lg overflow-hidden w-1/3">
-            <div className="p-4">
-              <h2 className="text-lg font-bold text-gray-800">John Doe</h2>
-              <p className="text-gray-500">Enrollment: 20230123</p>
-              <p className="text-gray-500">Role: Student</p>
-              <p className="text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              </p>
-            </div>
-          </div>
-          <div className="card bg-gray-400 shadow-md rounded-lg overflow-hidden w-1/3">
-            <div className="p-4">
-              <h2 className="text-lg font-bold text-gray-800">John Doe</h2>
-              <p className="text-gray-500">Enrollment: 20230123</p>
-              <p className="text-gray-500">Role: Student</p>
-              <p className="text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              </p>
-            </div>
-          </div>
-          <div className="card bg-gray-400 shadow-md rounded-lg overflow-hidden w-1/3">
-            <div className="p-4">
-              <h2 className="text-lg font-bold text-gray-800">John Doe</h2>
-              <p className="text-gray-500">Enrollment: 20230123</p>
-              <p className="text-gray-500">Role: Student</p>
-              <p className="text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
+          ))}
         </section>
-
       </div>
     </div>
   );

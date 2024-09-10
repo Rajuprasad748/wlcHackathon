@@ -1,29 +1,28 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const cors = require('cors');
-const userRoutes = require('./routes/userRoutes.js');
-require('dotenv').config();
+const cors = require("cors");
+const userRoutes = require("./routes/userRoutes.js");
+const adminRoutes = require("./routes/adminRoutes.js");
+const homeRoutes = require("./routes/homeRoutes.js");
+require("dotenv").config();
+const connect = require("./config/connectedToDb.js");
+const news = require("./models/news-model.js");
+const cookieParser = require("cookie-parser");
+const http = require("http");
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
 
-const connect = require('./config/connectedToDb.js');
- connect();
+app.use(cookieParser());
+connect();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "http://localhost:3000" }));
 
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
+app.use("/", homeRoutes);
 app.use("/user", userRoutes);
+app.use("/admin", adminRoutes);
 
-app.listen(4001, () => {
+server.listen(3001, () => {
   console.log(`Server listening on port`);
 });
-
-
-// app.use((req,res,next)  => {
-//     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With,Content-Type, Accept');
-//     next();
-//   })

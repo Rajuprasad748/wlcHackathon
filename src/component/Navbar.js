@@ -41,12 +41,13 @@ export default function Navbar() {
     },
   ];
 
+
   return (
     <>
       <div className="flex">
         <div className="bg-gray-800 text-white h-screen w-72 p-8 text-tighter">
           <div>
-            <h1 className="text-6xl font-bold m-4">WLC</h1>
+            <h1 className="text-6xl font-bold m-4">  <Link to={'/'} >WLC</Link>  </h1>
           </div>
           <nav>
             <ul className="space-y-4 my-20 flex flex-col justify-center gap-2 font-semibold">

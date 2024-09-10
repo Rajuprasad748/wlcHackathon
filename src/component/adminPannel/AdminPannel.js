@@ -3,41 +3,40 @@ import { Link } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { BiMessageSquareDetail } from "react-icons/bi";
-import { BsFillPatchQuestionFill } from "react-icons/bs";
 import { HiShoppingBag } from "react-icons/hi2";
 import { CgProfile } from "react-icons/cg";
-
-const Leftpannel = () => {
+import { IoIosAddCircle } from "react-icons/io";
+const AdminPannel = () => {
   const pannelIcones = [
     {
       name: "Home",
       icon: <IoHome />,
-      path: "/dashboard",
-    },
-    {
-      name: "QNA",
-      icon: <BsFillPatchQuestionFill />,
-      path: "/user/analysis",
+      path: "/admin/dashboard",
     },
     {
       name: "Chat",
       icon: <BiMessageSquareDetail />,
-      path: "/User/Chat",
+      path: "/admin/Chat",
     },
     {
-      name: "Shop",
+      name: "Add Post",
+      icon: <IoIosAddCircle />,
+      path: "/admin/addpost",
+    },
+    {
+      name: "Add Product",
       icon: <HiShoppingBag />,
-      path: "/User/shop",
+      path: "/admin/addproduct",
     },
     {
       name: "Profile",
       icon: <CgProfile />,
-      path: "/user/profile",
+      path: "/admin/profile",
     },
     {
       name: "Logout",
       icon: <RiLogoutCircleLine />,
-      path: "/user/logout",
+      path: "/admin/logout",
     },
   ];
 
@@ -45,7 +44,7 @@ const Leftpannel = () => {
     <>
       <div className="bg-gray-800 text-white h-screen w-72 p-8">
         <div>
-          <h1 className="text-6xl font-bold m-4">WLC</h1>
+          <h1 className="text-6xl font-bold m-4">WLC </h1>
         </div>
         <nav>
           <ul className="space-y-4 my-20 flex flex-col justify-center gap-2">
@@ -67,4 +66,4 @@ const Leftpannel = () => {
   );
 };
 
-export default Leftpannel;
+export default AdminPannel;

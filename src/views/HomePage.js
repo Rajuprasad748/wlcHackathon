@@ -1,52 +1,129 @@
 import React from "react";
 import Navbar from "../component/Navbar";
-// import Firstpage from '../component/Firstpage'
+import { GiCow } from "react-icons/gi";
+import { MdLocalHospital } from "react-icons/md";
+import { HiShoppingBag } from "react-icons/hi2";
+import { ImBullhorn } from "react-icons/im";
+import { GrUserWorker } from "react-icons/gr";
+import collage from '../membersImg/collage.png'
 
 const HomePage = () => {
   return (
-    <div>
-      <div className="flex">
-        <div>
-          <Navbar />
-        </div>
-        <div>
-        <section class="text-gray-400 bg-gray-900 body-font overflow-hidden">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="lg:w-4/5 mx-auto flex flex-wrap">
-      <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-        <h2 class="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>
-        <h1 class="text-white text-3xl title-font font-medium mb-4">Animated Night Hill Illustrations</h1>
-        <div class="flex mb-4">
-         
-        </div>
-        <p class="leading-relaxed mb-4">Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha taximy chia microdosing tilde DIY. XOXO fam iligo juiceramps cornhole raw denim forage brooklyn. Everyday carry +1 seitan poutine tumeric. Gastropub blue bottle austin listicle pour-over, neutra jean.</p>
-        <div class="flex border-t border-gray-800 py-2">
-          <span class="text-gray-500">Color</span>
-          <span class="ml-auto text-white">Blue</span>
-        </div>
-        <div class="flex border-t border-gray-800 py-2">
-          <span class="text-gray-500">Size</span>
-          <span class="ml-auto text-white">Medium</span>
-        </div>
-        <div class="flex border-t border-b mb-6 border-gray-800 py-2">
-          <span class="text-gray-500">Quantity</span>
-          <span class="ml-auto text-white">4</span>
-        </div>
-        <div class="flex">
-          <span class="title-font font-medium text-2xl text-white">$58.00</span>
-          <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
-          <button class="rounded-full w-10 h-10 bg-gray-800 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-            </svg>
-          </button>
-        </div>
+    <div className="flex overflow-hidden w-screen h-screen">
+      <div>
+        <Navbar />
       </div>
-      <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400" />
+      <div>
+        <section className="text-black w-[81vw] bg-slate-300 body-font overflow-scroll h-screen p-16 flex flex-col gap-12 mb-10 scroll-smooth-no-scrollbar">
+          <div className="w-full flex items-center justify-center flex-col gap-4 relative">
+          <h1 className="text-5xl font-bold">WLC</h1>
+            <h2 className="text-7xl font-bold flex items-center justify-center">
+              <span>
+                <GiCow className="text-7xl mx-2 text-gray-800" />
+              </span>
+              World of{" "}
+              
+              living critters{" "}
+              <span>
+              <GiCow className="text-7xl mx-2 text-gray-800" />
+              </span>
+            </h2>
+          </div>
+          <div className="font-normal text-lg">
+            <p>
+              At WLC, we are dedicated to creating a thriving ecosystem for
+              animal owners, from cherished pets to essential livestock. Our
+              platform is your one-stop solution for comprehensive animal care,
+              offering expert advice from verified veterinarians with over 25
+              years of experience. We bridge the gap between you and top-notch
+              veterinary care, ensuring that even in the most remote areas, your
+              animals receive the attention they deserve. Whether you're seeking
+              the latest updates on emerging animal health concerns, nutritious
+              food options, or a direct connection to medical professionals, WLC
+              has you covered. Our three core offerings—Treatment, Awareness,
+              and Buy/Sell—empower you to make informed decisions that keep your
+              animals happy, healthy, and safe. Together, let's make the world a
+              better place for all living creatures.
+            </p>
+          </div>
+          <div>
+            <img src={collage} alt="" className="" />
+          </div>
+          <div className="font-normal">
+            <h2 className="text-5xl font-medium my-4 border-l-4 border-solid border-black px-4 inline-flex">
+              What we do <span className="mx-4"> <GrUserWorker /></span>
+            </h2>
+            <p className="my-4 font-normal text-lg">
+              At WLC, our mission is to provide comprehensive support to animal
+              owners, ensuring that their beloved creatures receive the best
+              possible care, no matter where they are. We've developed a
+              platform that connects you with experienced veterinarians, keeps
+              you informed about important developments in animal welfare, and
+              makes it easy to access the products you need to keep your animals
+              healthy. Here's how we do it:
+            </p>
+          </div>
+          <div className="font-normal">
+            <h2 className="text-5xl font-medium my-4 border-l-4 border-solid border-black px-4 inline-flex">
+              Treatment <span className="mx-4"> <MdLocalHospital /></span>
+            </h2>
+            <p className="my-4 font-normal text-lg">
+              Our Treatment section is designed to make veterinary care
+              accessible and efficient. Users can upload a picture of their
+              animal's ailment, and our team of verified doctors with over 25
+              years of experience will provide a tailored prescription. To
+              ensure accuracy, users will also complete a detailed
+              questionnaire, available in both Hindi and English, which covers
+              all possible symptoms and conditions. This process allows for a
+              more accurate diagnosis and a better treatment plan, catering to
+              the needs of a diverse audience, including those in rural areas
+              who may have limited access to veterinary services.
+            </p>
+          </div>
+          <div className="font-normal">
+            <h2 className="text-5xl font-medium my-4 border-l-4 border-solid border-black px-4 inline-flex">
+              Awareness <span className="mx-4"> <ImBullhorn /></span>
+            </h2>
+            <p className="my-4 font-normal text-lg">
+              Staying informed is key to effective animal care, and our
+              Awareness section is here to help. When users sign up for WLC,
+              they'll receive timely notifications about the latest government
+              schemes and programs aimed at animal and livestock welfare. From
+              vaccination drives to new welfare initiatives, our social media
+              channels and in-app notifications ensure you never miss an update.
+              Just like popular e-commerce platforms, we keep you informed and
+              engaged, so you can take proactive steps to protect and care for
+              your animals.
+            </p>
+          </div>
+          <div className="font-normal">
+            <h2 className="text-5xl font-medium my-4 border-l-4 border-solid border-black px-4 inline-flex">
+              Buy/sell <span className="mx-4"> <HiShoppingBag /></span>
+            </h2>
+            <p className="my-4 font-normal text-lg">
+              Access to essential products is often a challenge in rural areas,
+              where medical shops and pet supply stores may be scarce. Our
+              Buy/Sell section is designed to bridge this gap by offering a
+              curated selection of medicines, as prescribed by our doctors, and
+              other necessary pet supplies. Whether you need specialized
+              treatments or everyday pet care products, our platform ensures you
+              can find what you need quickly and easily. By connecting you with
+              trusted suppliers, we make sure that your animals receive the care
+              they deserve, no matter where you are.
+            </p>
+          </div>
+          <div className="flex flex-col p-4 bg-slate-200 text-left rounded-lg shadow-md">
+      <h2 className="text-2xl font-semibold mb-4">Contact a Doctor</h2>
+      <div className="flex flex-col space-y-2">
+        <p className="text-lg font-medium">Doctor's Name:</p>
+        <p className="text-gray-700">Dr. John Doe</p>
+        <p className="text-lg font-medium">Contact Number:</p>
+        <p className="text-gray-700">+91 12345 67890</p>
+        <p className="text-lg font-medium">Availability:</p>
+        <p className="text-gray-700">Monday - Friday, 9 AM - 5 PM</p>
+      </div>
     </div>
-  </div>
-</section>
-        </div>
+        </section>
       </div>
     </div>
   );
